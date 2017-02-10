@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root  'products#welcome'
-  resources :products
+  resources :products, except: [:new, :edit]
 end

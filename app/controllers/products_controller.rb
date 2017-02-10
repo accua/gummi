@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @product = Product.new
   end
 
   def show
@@ -16,8 +17,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new
-    if @product.create(product_params)
+    @product = Product.new(product_params)
+    if @product.save
       redirect_to products_path
     else
       render :new

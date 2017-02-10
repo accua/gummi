@@ -9,4 +9,13 @@ describe 'the add a new item path' do
     click_on 'Create Product'
     expect(page).to have_content 'Snickers'
   end
+
+  it "will throw an error if a name is not entered" do
+    visit products_path
+    fill_in 'product[name]', with: ''
+    fill_in 'product[cost]', with: '2.25'
+    fill_in 'product[country]', with: 'United States'
+    click_on 'Create Product'
+    expect(page).to have_content 'errors'
+  end
 end

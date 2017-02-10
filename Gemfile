@@ -43,6 +43,7 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+  gem 'materialize-sass', '~> 0.97.8'
 end
 
 group :development do

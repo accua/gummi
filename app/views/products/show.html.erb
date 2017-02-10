@@ -1,17 +1,20 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= @product.name %></h3>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @product.name %></h3>
+    </div>
+    <div class="panel-body">
+      <p>Cost: $<%= @product.cost.to_s %></p>
+      <p>Country of Origin: <%= @product.country %></p>
+    </div>
   </div>
-  <div class="panel-body">
-    <p>Cost: $<%= @product.cost.to_s %></p>
-    <p>Country of Origin: <%= @product.country %></p>
+
+  <%= render 'form' %>
+  <br>
+  <%= link_to "Delete Product", product_path(@product),
+  :data => {:confirm => 'Are you sure?',
+    :method => 'delete'}%>
+    <br>
+    <%= link_to 'Return to product list', products_path %>
   </div>
 </div>
-
-<%= render 'form' %>
-<br>
-<%= link_to "Delete Product", product_path(@product),
-                              :data => {:confirm => 'Are you sure?',
-                              :method => 'delete'}%>
-<br>
-<%= link_to 'Return to product list', products_path %>

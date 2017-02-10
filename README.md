@@ -1,24 +1,35 @@
-# README
+# Gummi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+_This application was created to showcase skills learned during rails week 1_
 
-Things you may want to cover:
+_**Andrew Accuardi**_
 
-* Ruby version
+## Description
 
-* System dependencies
+* _As a user, I'd like to click on a product and see it's details._
+* _As an admin, I'd like to create, update, delete new products._
 
-* Configuration
+## Installation
 
-* Database creation
+* `git clone https://github.com/accua/gummi`
+* `rails db:create`
+* `rails db:migrate`
+* `bundle`
+* `rails s` to serve
 
-* Database initialization
+## Running / Development
 
-* How to run the test suite
+* navigate to `localhost:3000` in your web browser to see the project!
 
-* Services (job queues, cache servers, search engines, etc.)
+## Known Bugs
+* The navbar has a media query that moves the link unnecessarily.
 
-* Deployment instructions
+## Technologies Used
 
-* ...
+_This webpage was made using HTML, Ruby on Rails, Bootstrap, MaterializeCSS._
+
+### License
+
+Copyright (c) 2017 _Andrew Accuardi_
+
+*Licensed under the GPL License*

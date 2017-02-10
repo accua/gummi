@@ -44,6 +44,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
   gem 'materialize-sass', '~> 0.97.8'
+  gem 'capybara'
 end
 
 group :development do

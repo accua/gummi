@@ -42,4 +42,11 @@ describe 'the detail page path' do
     click_on 'Create Product'
     expect(page).to have_content 'errors'
   end
+
+  it "will delete the item" do
+    prod = Product.create(name: 'Twix', cost: '2.25', country: 'USA')
+    visit product_path(prod)
+    click_on 'Delete Product'
+    expect(page).to have_content 'Gummi Bear Kingdom'
+  end
 end

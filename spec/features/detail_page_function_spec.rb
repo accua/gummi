@@ -7,11 +7,39 @@ describe 'the detail page path' do
     click_on 'Twix'
     expect(page).to have_content 'Twix'
   end
+
   it "will update the item" do
     prod = Product.create(name: 'Twix', cost: '2.25', country: 'USA')
     visit product_path(prod)
     fill_in 'product[name]', with: 'Snickers'
     click_on 'Update Product'
     expect(page).to have_content 'Snickers'
+  end
+
+  it "will throw an error if a name is not entered" do
+    visit products_path
+    fill_in 'product[name]', with: ''
+    fill_in 'product[cost]', with: '2.25'
+    fill_in 'product[country]', with: 'United States'
+    click_on 'Create Product'
+    expect(page).to have_content 'errors'
+  end
+
+  it "will throw an error if a cost is not entered" do
+    visit products_path
+    fill_in 'product[name]', with: 'Snickers'
+    fill_in 'product[cost]', with: ''
+    fill_in 'product[country]', with: 'United States'
+    click_on 'Create Product'
+    expect(page).to have_content 'errors'
+  end
+
+  it "will throw an error if a country is not entered" do
+    visit products_path
+    fill_in 'product[name]', with: 'Snickers'
+    fill_in 'product[cost]', with: '1.25'
+    fill_in 'product[country]', with: ''
+    click_on 'Create Product'
+    expect(page).to have_content 'errors'
   end
 end

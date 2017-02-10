@@ -19,7 +19,7 @@ describe 'the add a new item path' do
     expect(page).to have_content 'errors'
   end
 
-  it "will throw an error if a name is not entered" do
+  it "will throw an error if a cost is not entered" do
     visit products_path
     fill_in 'product[name]', with: 'Snickers'
     fill_in 'product[cost]', with: ''
@@ -28,7 +28,7 @@ describe 'the add a new item path' do
     expect(page).to have_content 'errors'
   end
 
-  it "will throw an error if a name is not entered" do
+  it "will throw an error if a country is not entered" do
     visit products_path
     fill_in 'product[name]', with: 'Snickers'
     fill_in 'product[cost]', with: '1.25'

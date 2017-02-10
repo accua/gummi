@@ -10,8 +10,8 @@
 
 <%= render 'form' %>
 <br>
-<%= link_to "Delete Product", products_path,
+<%= link_to "Delete Product", product_path(@product),
                               :data => {:confirm => 'Are you sure?',
                               :method => 'delete'}%>
-<br>                              
+<br>
 <%= link_to 'Return to product list', products_path %>

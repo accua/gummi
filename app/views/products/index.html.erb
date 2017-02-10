@@ -1,0 +1,4 @@
+<% @products.each do |product| %>
+  <%= link_to product.name, product_path(product) + " - $" + product.cost.to_s %><br>  
+  <%=" Country of Origin: " + product.country %><br>
+<% end %>

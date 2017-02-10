@@ -1,0 +1,12 @@
+<%= @products.each do |product| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">product.name</h3>
+  </div>
+  <div class="panel-body">
+    <p>Cost: product.cost.to_s</p>
+    <p>Country of Origin: product.country</p>
+  </div>
+</div>
+
+<%= render 'form' %>
